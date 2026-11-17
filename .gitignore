@@ -1,0 +1,172 @@
+# =============================================================================
+# .gitignore — sys-tickets-dmc (Next.js 16 + TypeScript)
+# Objetivo: poder ejecutar `git add .` sin riesgo de versionar secretos,
+# dependencias, artefactos de build, logs ni archivos de editor/SO.
+# =============================================================================
+
+# --- Dependencias ------------------------------------------------------------
+node_modules/
+.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+jspm_packages/
+bower_components/
+
+# --- Next.js: build y caché --------------------------------------------------
+/.next/
+/out/
+/build/
+/dist/
+.vercel
+.turbo/
+.swc/
+next-env.d.ts
+
+# --- TypeScript / herramientas -----------------------------------------------
+*.tsbuildinfo
+.eslintcache
+.stylelintcache
+.prettiercache
+.cache/
+.parcel-cache/
+.tmp/
+tmp/
+temp/
+
+# --- Variables de entorno y secretos (NUNCA versionar) ----------------------
+# Se versiona solo la plantilla: .env.example
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+*.csr
+*.jks
+*.keystore
+id_rsa*
+id_ed25519*
+*.kdbx
+secrets/
+credentials*.json
+service-account*.json
+.npmrc
+.yarnrc.yml
+.netrc
+
+# --- Base de datos local / respaldos (SQL Server) ----------------------------
+*.mdf
+*.ldf
+*.ndf
+*.bak
+*.bacpac
+*.dacpac
+*.sqlite
+*.sqlite3
+*.db
+*.sql.gz
+dumps/
+backups/
+
+# --- Cargas de usuario / adjuntos de tickets ---------------------------------
+uploads/
+public/uploads/
+
+# --- Pruebas y cobertura -----------------------------------------------------
+coverage/
+.nyc_output/
+test-results/
+playwright-report/
+playwright/.cache/
+cypress/videos/
+cypress/screenshots/
+
+# --- Logs --------------------------------------------------------------------
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# --- Procesos / runtime ------------------------------------------------------
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# --- Paquetes y archivos comprimidos generados -------------------------------
+*.tgz
+*.tar.gz
+*.zip
+*.7z
+*.rar
+
+# --- Asistentes de IA / configuración local ----------------------------------
+# (AGENTS.md y CLAUDE.md sí se versionan: son instrucciones del proyecto)
+.claude/
+!.claude/settings.json
+!.claude/agents/
+!.claude/skills/
+!.claude/commands/
+.claude/settings.local.json
+.claude/projects/
+.cursor/
+.aider*
+.continue/
+.windsurf/
+.codeium/
+
+# --- Editores / IDE ----------------------------------------------------------
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/tasks.json
+!.vscode/launch.json
+.idea/
+*.iml
+*.ipr
+*.iws
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+.project
+.classpath
+.settings/
+*.swp
+*.swo
+*~
+.#*
+\#*#
+
+# --- Sistema operativo -------------------------------------------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+*.stackdump
+
+# --- Capturas y borradores locales -------------------------------------------
+Screenshot*.png
+Captura*.png
+*.orig
+*.rej
+*.bak.*
+scratch/
